@@ -40,3 +40,7 @@ using ConsoleAppForPractice.models;
 //TuplePractice tuple = new();
 //var data = tuple.GetData();
 //Console.WriteLine($"Item1: {data.Item1}, Item2: {data.Item2}, Item3: {data.Item3}, Item4: {data.Item4}, Item5: {data.Item5}");
+
+//7).   LINQ Index
+LinqIndex linqIndex = new();
+linqIndex.Display();
