@@ -1,8 +1,8 @@
 ﻿namespace ConsoleAppForPractice.models
 {
-    public class Context
+    public static class Context
     {
-        public List<Employee> GetEmployees()
+        public static List<Employee> GetEmployees()
         {
             Random random = new Random();
             List<Employee> employees = new();
