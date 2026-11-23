@@ -18,9 +18,22 @@ using ConsoleAppForPractice.models;
 //    Console.WriteLine("Instances are different.");
 //--------------------------------------------------------------------------------------
 
-//3).   Char Count From string
+//3).   Write a program to count the number of occurrences of each character in a string using C# using LINQ
+//I / P: hello
+//O/P:
+//h: 1
+//e: 1
+//l: 2
+//o: 1
+
 //CharCount charCount = new();
+//Using Dictionary
 //charCount.CountCharachters();
+
+//Using LINQ
+//charCount.CountCharachtersUsingLINQ();
+//String Input = "My Name is Prashant Kumar";
+//Input.GroupBy(c => c).Select(s => new { Character = s.Key, Count = s.Count() }).ToList().ForEach(s => Console.WriteLine($"Character: {s.Character}, Count: {s.Count}"));
 //----------------------------------------------------------------------------------------
 
 //4).   Get Highest from Array
@@ -46,19 +59,36 @@ using ConsoleAppForPractice.models;
 //linqIndex.Display();
 
 //9).   LINQ Practice
-var _ = Context.GetEmployeesA();
+//var _ = Context.GetEmployeesA();
 //_.Select(x => x).Distinct().OrderByDescending(s => s.Salary).Skip(5).Take(1).ToList()
 //    .ForEach(s => Console.WriteLine($"id: {s.Id}, Name: {s.Name}, Salary: {s.Salary}"));
 
-var result = _.GroupBy(e => e.Department)
-    .Select(g => new
-    {
-        Department = g.Key,
-        AverageSalary = g.Average(e => e.Salary)
-    }).Skip(1).Take(3).ToList();
+//var result = _.GroupBy(e => e.Department)
+//    .Select(g => new
+//    {
+//        Department = g.Key,
+//        AverageSalary = g.Average(e => e.Salary)
+//    }).Skip(1).Take(3).ToList();
 
-result.ForEach(s =>
-    Console.WriteLine(
-        $"Department: {s.Department}, Average Salary: {s.AverageSalary:F2}"
-    ));
+//result.ForEach(s =>
+//    Console.WriteLine(
+//        $"Department: {s.Department}, Average Salary: {s.AverageSalary:F2}"
+//    ));
 
+//10).   Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target. Each input would have exactly one solution, and you may not use the same element twice. You can return the answer in any order
+
+//Example 1:
+//Input: nums = [2,7,11,15], target = 9
+//Output: [0,1]
+//Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
+
+//Example 2:
+//Input: nums = [3,2,4], target = 6
+//Output: [1,2]
+
+//Example 3:
+//Input: nums = [3,3], target = 6
+//Output: [0,1]
+
+//AddTwoNoFromArray.GetIndices();
+AddTwoNoFromArray.GetIndicesUsingDictionary();

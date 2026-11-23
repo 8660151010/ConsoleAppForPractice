@@ -25,5 +25,18 @@
             }
         }
 
+        public void CountCharachtersUsingLINQ()
+        {
+            Console.WriteLine("Enter a string to count characters:");
+            string inputString = Console.ReadLine();
+
+            var charCount = inputString.GroupBy(c => c).Select(g => new { Character = g.Key, Count = g.Count() });
+
+            foreach (var item in charCount)
+            {
+                Console.WriteLine($"Character: '{item.Character}' Count: {item.Count}");
+            }
+        }
+
     }
 }
