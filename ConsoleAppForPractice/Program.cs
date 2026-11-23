@@ -42,5 +42,23 @@ using ConsoleAppForPractice.models;
 //Console.WriteLine($"Item1: {data.Item1}, Item2: {data.Item2}, Item3: {data.Item3}, Item4: {data.Item4}, Item5: {data.Item5}");
 
 //7).   LINQ Index
-LinqIndex linqIndex = new();
-linqIndex.Display();
+//LinqIndex linqIndex = new();
+//linqIndex.Display();
+
+//9).   LINQ Practice
+var _ = Context.GetEmployeesA();
+//_.Select(x => x).Distinct().OrderByDescending(s => s.Salary).Skip(5).Take(1).ToList()
+//    .ForEach(s => Console.WriteLine($"id: {s.Id}, Name: {s.Name}, Salary: {s.Salary}"));
+
+var result = _.GroupBy(e => e.Department)
+    .Select(g => new
+    {
+        Department = g.Key,
+        AverageSalary = g.Average(e => e.Salary)
+    }).Skip(1).Take(3).ToList();
+
+result.ForEach(s =>
+    Console.WriteLine(
+        $"Department: {s.Department}, Average Salary: {s.AverageSalary:F2}"
+    ));
+
