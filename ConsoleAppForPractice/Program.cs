@@ -91,4 +91,9 @@ using ConsoleAppForPractice.models;
 //Output: [0,1]
 
 //AddTwoNoFromArray.GetIndices();
-AddTwoNoFromArray.GetIndicesUsingDictionary();
+//AddTwoNoFromArray.GetIndicesUsingDictionary();
+
+//11). find duplicate using LINQ int[] numbers = { 1, 2, 3, 4, 5, 2, 3, 7, 8, 5 };
+int[] numbers = { 1, 2, 3, 4, 5, 2, 3, 7, 8, 5 };
+numbers.GroupBy(x => x).Where(w => w.Count() > 1).Select(s => new { Number = s.Key, Count = s.Count() }).ToList().ForEach(f => Console.WriteLine($"Number :- {f.Number} and Count :- {f.Count}"));
+;
